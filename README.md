@@ -11,6 +11,17 @@ Some things that occasionally cause minor hiccups:
 
 One thought: A "tag" of some sort on resources that allow them to run in a separate pipeline.
 
+Somehow use https://learn.hashicorp.com/tutorials/terraform/resource-targeting?in=terraform/cli to select a subset of resources?
+
+Perhaps a file that specifies things that should be run prior to a full apply?
+```
+# pre-req-resources.txt
+aws_s3_bucket.lambda_bucket
+aws_codepipeline.deployment
+
+...etc
+```
+
 example idea of consecutive pipeline stages:
 ```
 tf-static      # contains s3 buckets, secrets, IAM, etc.
